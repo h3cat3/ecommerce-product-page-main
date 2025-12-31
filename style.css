@@ -1,0 +1,16 @@
+
+.image-galery{
+    text-align: center;
+}
+#main-image{
+    width: 80%;
+    margin-bottom: 1.25rem;
+}
+.thumb{
+    width: 20%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.thumb:hover{
+    transform: scale(1.1);
+}
