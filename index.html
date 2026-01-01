@@ -6,6 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="reset.css">
   <title>Frontend Mentor | E-commerce product page</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -13,25 +14,30 @@
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
+
 </head>
 <body>
-<nav class="nav">
+<nav class="nav flex-row">
   
-  <div class="menu">
+  <div class="flex-row">
+    <img id="menu-icon" class="menu-icon" src="images/icon-menu.svg" alt="open menu">
     <img src="images/logo.svg" alt="">
-    <a href="">Collections</a>
-    <a href="">Men</a>
-    <a href="">Women</a>
-    <a href="">About</a>
-    <a href="">Contact</a>
+    <div class="menu" id="menu">
+      <img src="images/icon-close.svg" alt="close" class="close" id="close">
+      <a href="" class="menu__a">Collections</a>
+      <a href="" class="menu__a">Men</a>
+      <a href="" class="menu__a">Women</a>
+      <a href="" class="menu__a">About</a>
+      <a href="" class="menu__a">Contact</a>
+    </div>
   </div> 
-    <div class="cart">
-      <img src="images/icon-cart.svg" alt="cart">
-    </div>
-    <div class="account">
-      <img src="images/image-avatar.png" alt="account">
-    </div>
+
+  <div class="flex-row">
+    <img class="cart" src="images/icon-cart.svg" alt="cart">
+    <img class="account" src="images/image-avatar.png" alt="account">
+  </div>
   
+
 </nav>
 
 <section class="image-galery">
