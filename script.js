@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-    //make modal gallery
+    //modal gallery for screens bigger than 1024px
     const modal = document.getElementById('gallery');
     const modalContent =document.getElementById('modal');
     const galleryClose =  document.getElementById('close-gallery');
@@ -65,13 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalContent.classList.remove('modal-content');
                 galleryClose.style.display = 'none'
                 previewBtn.style.display = 'none';
-                
                 nextBtn.style.display = 'none';
-
             })
-
         }
-        
     })
 
 })

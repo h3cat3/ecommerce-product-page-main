@@ -89,11 +89,11 @@ body{
     border-radius: 1rem;
 }
 #preview{
-    margin-right: -4rem;
+    margin-right: -3.5rem;
     z-index: 1;
 }
 #next{
-    margin-left: -4rem;
+    margin-left: -3.5rem;
     z-index: 1;
 }
 .thumb{
