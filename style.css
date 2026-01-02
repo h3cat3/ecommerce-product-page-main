@@ -6,16 +6,18 @@
     --Grayish-blue: hsl(220, 14%, 75%);
     --Light-grayish-blue: hsl(223, 64%, 98%);
     --White: hsl(0, 0%, 100%);
-    --Black/*with 75% opacity for lightbox background*/: hsl(0, 0%, 0%);
+    --Black: hsl(0, 0%, 0%);
+    --Black-transparent: hsla(0, 0%, 0%, 0.75);
 
 }
+
 body{
-    padding: 5%;
+    height: 100vh;
     color: var(--Dark-grayish-blue);
 }
 /*create nav bar*/
 .nav{
-    padding-bottom: 1.5rem;
+    padding: 1.5rem;
     border-bottom: 2px solid var(--Grayish-blue);
 }
 .flex-row{
@@ -26,6 +28,7 @@ body{
     
 }
 .menu-mobile{
+    z-index: 2;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -42,6 +45,7 @@ body{
     display: none;
     width: 1.5rem;
     padding-bottom: 3rem;
+   
 }
 
 .cart{
@@ -58,24 +62,73 @@ body{
   display:none;
 }
 
+/*main */
+.container{
+    padding: 2rem 0;
+}
 
 /*create the galery*/
 .image-galery{
     text-align: center;
+    border-radius: 5px;
 }
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img-btn{
+    background-color: var(--White);
+    border-radius: 50%;
+    padding: 1rem;  
+    border: none;
+}
+
 #main-image{
-    width: 80%;
     margin-bottom: 1.25rem;
+    border-radius: 1rem;
+}
+#preview{
+    margin-right: -4rem;
+    z-index: 1;
+}
+#next{
+    margin-left: -4rem;
+    z-index: 1;
 }
 .thumb{
-    width: 20%;
+    max-width: 23%;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.4s;
+    border-radius: 0.75rem;
 }
-.thumb:hover{
-    transform: scale(1.1);
+.thumb:active, .thumb:hover{
+    filter: brightness(140%) saturate(70%);
+    border: 4px solid var(--Orange);
+}
+.thumbnails{
+    display: none;
+}
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 100vh;
+    background-color: var(--Black-transparent);
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.modal-content{
+    margin: auto;
+    display: block;
+    width: 50%;
+    
+
 }
 @media (min-width: 768px) {
+ 
     .menu{
         display: flex;
         gap: clamp(1rem,2vw, 3rem);
@@ -87,4 +140,24 @@ body{
         margin-bottom: -2rem;
     }
     .menu-icon{display: none;}
+
+    .container{
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(450Px, 1fr));
+        gap: 2rem;
+        }
+    .thumbnails{
+        display: flex;
+        justify-content: space-evenly;
+        gap: 1rem;
+    }
+    .image-gallery{
+        padding: 0 clamp(3rem,2vw, 5rem);
+       
+    }
+    .img-btn{
+        display: none;
+    }
+}
 }
