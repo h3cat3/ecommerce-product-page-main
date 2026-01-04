@@ -25,6 +25,8 @@ body{
     align-items: center;
     justify-content: space-between;
     gap: clamp(1rem,2vw,4rem);
+    margin: clamp(1rem,2vw,4rem);
+
     
 }
 .menu-mobile{
@@ -45,9 +47,11 @@ body{
     display: none;
     width: 1.5rem;
     padding-bottom: 3rem;
-   
+  
 }
-
+#close-gallery{
+    fill: crimson;
+}
 .cart{
     max-height: 1.5rem;
 }
@@ -124,10 +128,67 @@ body{
     margin: auto;
     display: block;
     width: 50%;
-    
+}
+.close:hover {
+    fill: var(--Pale-orange);
+}
+
+/*content*/
+.content{
+    padding: clamp(1rem,2vw,4rem);
+    max-width: 28rem;
+    margin: 0 auto;
 
 }
+.name{
+    text-transform: uppercase;
+}
+.bold{
+    padding: 1rem 0;
+    font-size: 2rem;
+    color: var(--Black);
+}
+.bg-text{
+    font-size: 1.25rem;
+    background-color: var(--Black);
+    color: var(--White);
+    border-radius: 10px;
+    padding: 0.25rem 0.5rem;
+}
+.bg-light{
+    background-color: var(--Light-grayish-blue);
+    border-radius: 10px;
+    color: var(--Black);
+    font-size: 1.5;
+    padding: 1rem 2rem;
+}
+.cut-text{
+    text-decoration: line-through;
+}
+.add-cart{
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--Orange);
+    color: var(--Black);
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: none;
+}
+.cart-items{
+    border-radius: 10px;
+    background-color: var(--White);
+    position: absolute;
+    box-shadow: 0 2px 5px var(--Dark-grayish-blue);
+    top:17%;
+    width: 90vw;
+    left: 5%;
+    height: 10rem;
+}
+
 @media (min-width: 768px) {
+    body{
+        padding: 0 5%;
+    }
  
     .menu{
         display: flex;
@@ -144,7 +205,7 @@ body{
     .container{
         max-width: 100%;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(450Px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(400Px, 1fr));
         gap: 2rem;
         }
     .thumbnails{
@@ -159,5 +220,19 @@ body{
     .img-btn{
         display: none;
     }
-}
+    .price{
+        flex-direction: column;
+        align-items: start;
+        gap: 0;
+    }
+    .quantity{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    .cart-items{
+        left: 70%;
+        width: 25vw;
+    }
 }

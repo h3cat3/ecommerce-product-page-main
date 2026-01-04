@@ -33,7 +33,7 @@
   </div> 
 
   <div class="flex-row">
-    <img class="cart" src="images/icon-cart.svg" alt="cart">
+    <button class="cart"> <img class="cart" src="images/icon-cart.svg" alt="cart"> <spann id="cart-count"></spann></button>
     <img class="account" src="images/image-avatar.png" alt="account">
   </div>
   
@@ -63,32 +63,33 @@
   </div>
   
 
-  <section class="details">
-    <p>Sneaker Company</p>
-    <h1>Fall Limited Edition Sneakers</h1>
+  <section class="content">
+    <p class="name">Sneaker Company</p>
+    <h1 id="name" class="bold">Fall Limited Edition</br> Sneakers</h1>
     <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
   durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
-    <p class="price">$125.00</p>
-    <span class="discount">50%</span>
-    <p class="old-price">$250.00</p>
+    <div class="flex-row price">
+      <p id="price" class="bold">$125.00 <span class="bg-text">50%</span></p>
+      <p class="cut-text">$250.00</p>
+    </div>
+    
     <div class="quantity">
-      <img src="images/icon-minus.svg" alt="minus" id="minus">
-      <p id="quantity">0</p>
-      <img src="images/icon-plus.svg" alt="plus" id="plus">
-      <button type="button" id="add">
-        <img src="images/icon-cart.svg" alt="">
-        Add to cart
+      <div class="flex-row bg-light">
+        <img src="images/icon-minus.svg" alt="minus" id="minus">
+        <p id="quantity">0</p>
+        <img src="images/icon-plus.svg" alt="plus" id="plus">
+      </div>
+      <button type="button" id="add-cart" class="add-cart">
+        <img / src="images/icon-cart.svg" alt=""> Add to cart
       </button>
     </div>
   </section>
+  <section class="cart-items">
+    <h2 class="nav bold">Cart</h2>
+    <div class="flex-row">
+      <ul id="cart-items">Your cart is empty</ul></div>
+  </section>
 </main>
-
-  
- 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Catalina Mackay</a>.
-  </div>
   <script defer src="script.js"></script>
 </body>
-</html>
+</html> 

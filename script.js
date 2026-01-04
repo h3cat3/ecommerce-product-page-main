@@ -70,4 +70,56 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
+    //quantity
+    const quantity = document.getElementById('quantity');
+    const minus = document.getElementById('minus');
+    const plus = document.getElementById('plus');
+    
+    minus.addEventListener('click', () => {
+        let qty = parseInt(quantity.innerText, 10);
+        if (qty > 0) {
+            qty --;
+            quantity.innerText = qty;
+        }
+    })
+    plus.addEventListener('click', () => {
+        let qty = parseInt(quantity.innerText, 10);
+        qty ++;
+        quantity.innerText = qty
+    })
+    //add to cart
+    let cart = [];
+
+    function addToCart(image, name, price, quantity) {
+        const item = cart.find(product => product.name === name);
+        if (item) {
+            item.quantity += quantity;
+        } else {
+            cart.push({image,name,price,quantity: 1});
+        }
+        updateCart();
+    }
+
+    function updateCart() {
+        const cartItems = document.getElementById('cart-items');
+        const cartTotal =document.getElementById('cart-total');
+        cartItems.innerHTML = ''; 
+        let total = 0;
+        cart.forEach(product => {
+            const li = document.createElement('li');
+            li.textContent = `
+            <img src='${product.image}' alt=''>
+            <p>product${product.name} - $${product.price} x ${product.quantity}</p>`;
+            const removeButton = document.createElement('button');
+            removeButton.innerText = 'Remove';
+        })
+    }
+    
+    const addCart = document.getElementById('add-cart');
+    const name = document.getElementById('name');
+    const price = document.getElementById('price');
+
+    addCart.addEventListener('click', () => {
+        addToCart(mainImage.src, name.innerText,price.innerText,quantity.innerText )
+    })
 })
