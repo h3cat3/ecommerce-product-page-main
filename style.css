@@ -1,6 +1,6 @@
 :root{
     --Orange: hsl(26, 100%, 55%);
-    --Pale-orange: hsl(25, 100%, 94%);
+    --Pale-orange: hsl(26, 100%, 70%);
     --Very-dark-blue: hsl(220, 13%, 13%);
     --Dark-grayish-blue: hsl(219, 9%, 45%);
     --Grayish-blue: hsl(220, 14%, 75%);
@@ -26,8 +26,6 @@ body{
     justify-content: space-between;
     gap: clamp(1rem,2vw,4rem);
     margin: clamp(1rem,2vw,4rem);
-
-    
 }
 .menu-mobile{
     z-index: 2;
@@ -47,11 +45,8 @@ body{
     display: none;
     width: 1.5rem;
     padding-bottom: 3rem;
-  
 }
-#close-gallery{
-    fill: crimson;
-}
+
 .cart{
     max-height: 1.5rem;
 }
@@ -82,23 +77,46 @@ body{
     justify-content: center;
 }
 .img-btn{
+   z-index: 1;
     background-color: var(--White);
     border-radius: 50%;
-    padding: 1rem;  
+    padding: 0.75rem 1rem ;  
     border: none;
+
+}
+.orange:hover{
+    path{
+        stroke: var(--Orange);
+    }
+}
+.orange-x:hover{
+    path{
+        fill: var(--Orange);
+    }
+}
+.pale-orange:hover{
+ path{
+    fill: var(--Pale-orange);
+     stroke: var(--Pale-orange);
+    
+ }
+}
+.black{
+    path{
+        fill: var(--Black)
+    }
 }
 
 #main-image{
     margin-bottom: 1.25rem;
     border-radius: 1rem;
 }
-#preview{
+.img-btn--right{
     margin-right: -3.5rem;
-    z-index: 1;
+    
 }
-#next{
-    margin-left: -3.5rem;
-    z-index: 1;
+ .img-btn--left{
+    margin-left: -3.5rem;  
 }
 .thumb{
     max-width: 23%;
@@ -107,7 +125,7 @@ body{
     border-radius: 0.75rem;
 }
 .thumb:active, .thumb:hover{
-    filter: brightness(140%) saturate(70%);
+    filter: brightness(160%) saturate(50%);
     border: 4px solid var(--Orange);
 }
 .thumbnails{
@@ -129,9 +147,7 @@ body{
     display: block;
     width: 50%;
 }
-.close:hover {
-    fill: var(--Pale-orange);
-}
+
 
 /*content*/
 .content{
@@ -174,7 +190,11 @@ body{
     border-radius: 10px;
     border: none;
 }
+.add-cart:hover{
+    background-color: var(--Pale-orange);
+}
 .cart-items{
+    display: none;
     border-radius: 10px;
     background-color: var(--White);
     position: absolute;
@@ -205,8 +225,8 @@ body{
     .container{
         max-width: 100%;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400Px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(380Px, 1fr));
+        gap: 1rem;
         }
     .thumbnails{
         display: flex;

@@ -45,12 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-    //modal gallery for screens bigger than 1024px
+    //modal gallery for screens bigger than 768px
     const modal = document.getElementById('gallery');
     const modalContent =document.getElementById('modal');
     const galleryClose =  document.getElementById('close-gallery');
     mainImage.addEventListener('click', () => {
-        if (window.innerWidth >= 1024) {
+        if (window.innerWidth >= 768) {
             modal.classList.add('modal');
             modalContent.classList.add('modal-content')
             galleryClose.style.display= 'block';
