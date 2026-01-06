@@ -17,7 +17,7 @@ body{
 }
 /*create nav bar*/
 .nav{
-    padding: 1.5rem;
+    padding: 1rem 0;
     border-bottom: 2px solid var(--Grayish-blue);
 }
 .flex-row{
@@ -48,7 +48,7 @@ body{
 }
 
 .cart{
-    max-height: 1.5rem;
+    min-width: 2.5rem;
 }
 .account{
     max-height: 3rem;
