@@ -91,35 +91,82 @@ document.addEventListener('DOMContentLoaded', () => {
     let cart = [];
 
     function addToCart(image, name, price, quantity) {
+         console.log(image);
+        console.log(name);
+        console.log(price);
+        console.log(quantity);
         const item = cart.find(product => product.name === name);
         if (item) {
-            item.quantity += quantity;
+            item.quantity = Number(item.quantity) + Number(quantity);
         } else {
-            cart.push({image,name,price,quantity: 1});
+            cart.push({image,name,price,quantity});
+            console.log(cart)
         }
         updateCart();
     }
 
     function updateCart() {
         const cartItems = document.getElementById('cart-items');
-        const cartTotal =document.getElementById('cart-total');
         cartItems.innerHTML = ''; 
-        let total = 0;
         cart.forEach(product => {
+            console.log(product.quantity)
             const li = document.createElement('li');
-            li.textContent = `
-            <img src='${product.image}' alt=''>
-            <p>product${product.name} - $${product.price} x ${product.quantity}</p>`;
+            li.innerHTML = `<img hight="50" width="50" src='${product.image}' alt=''>
+            <p>product${product.name} - ${product.price} x ${product.quantity}</p>
+            <img id="delet" src="images/icon-delete.svg" alt="delete">`;
+            li.classList.add('flex-row');
+            const checkoutBtn = document.getElementById('checkout');
+            checkoutBtn.style.display = 'block';
             const removeButton = document.createElement('button');
             removeButton.innerText = 'Remove';
+            cartItems.appendChild(li);
+            cartCounter.innerText = product.quantity;
+            document.getElementById('delet').addEventListener('click', () => {
+                li.remove;
+                cart = [];
+                cartCounter.innerHTML = "";
+                cartItems.innerHTML= 'Your cart is empty';
+                checkoutBtn.style.display = 'none';
+            })
+            checkoutBtn.addEventListener('click', () => {
+                li.remove;
+                cart = [];
+                cartCounter.innerHTML = "";
+                cartItems.innerHTML= 'Your cart is empty';
+                checkoutBtn.style.display = 'none';
+            })
         })
+        
     }
+   
+
+   
     
     const addCart = document.getElementById('add-cart');
     const name = document.getElementById('name');
     const price = document.getElementById('price');
 
     addCart.addEventListener('click', () => {
-        addToCart(mainImage.src, name.innerText,price.innerText,quantity.innerText )
+        addToCart(mainImage.src, name.innerText,price.innerText,quantity.innerText );
+       
     })
 })
+
+//open close the cart box
+    let display = false;
+    const openCart =document.getElementById('cart');
+    const cartBox = document.getElementById('cart-box')
+
+    openCart.addEventListener('click', () => {
+        if (!display) {
+        cartBox.style.display = 'block'; 
+        display = true;
+    } else {
+        cartBox.style.display = 'none';
+        display = false;
+    }
+        
+    })
+
+    const cartCounter = document.getElementById('cart-count')
+
