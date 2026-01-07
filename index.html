@@ -17,81 +17,87 @@
 
 </head>
 <body>
-<nav class="nav flex-row">
-  
-  <div class="flex-row">
-    <img id="menu-icon" class="menu-icon" src="images/icon-menu.svg" alt="open menu">
-    <img src="images/logo.svg" alt="">
-    <div class="menu" id="menu">
-      <img src="images/icon-close.svg" alt="close" class="close" id="close">
-      <a href="" class="menu__a">Collections</a>
-      <a href="" class="menu__a">Men</a>
-      <a href="" class="menu__a">Women</a>
-      <a href="" class="menu__a">About</a>
-      <a href="" class="menu__a">Contact</a>
-    </div>
-  </div> 
-
-  <div class="flex-row">
-    <button class="cart" id="cart">
-       <img src="images/icon-cart.svg" > <span class="buble" id="cart-count" aria-live="polite"></span>
+  <nav class="nav">
+    <div class="nav__left">
+      <button id="menu-icon" class="nav__menu-button" >
+        <img src="images/icon-menu.svg" alt="open menu">
       </button>
-    <img class="account" src="images/image-avatar.png" alt="account">
+
+      <img src="images/logo.svg" alt="">
+      
+      <div id="menu" class="menu">
+        <button class="menu__close" id="close">
+          <img src="images/icon-close.svg" alt="close">
+        </button>
+      
+        <a href="" class="menu__a">Collections</a>
+        <a href="" class="menu__a">Men</a>
+        <a href="" class="menu__a">Women</a>
+        <a href="" class="menu__a">About</a>
+        <a href="" class="menu__a">Contact</a>
+      </div>
+    </div> 
+
+    <div class="nav__right">
+      <button class="cart__button" id="cart">
+        <img src="images/icon-cart.svg" alt="cart" > 
+        <span class="cart__count" id="cart-count" aria-live="polite"></span>
+      </button>
+    <img class="nav__avatar" src="images/image-avatar.png" alt="account">
   </div>
   
 
 </nav>
 
-<main class="container">
-  <div >
-    
-    <section id="gallery" class="image-gallery">
-      
-      <div id="modal" role="dialog" aria-modal="true" aria-label="Product image gallery">
-        
-        <button id="close-gallery" class="close">
-          <svg class="orange-x"  xmlns="http://www.w3.org/2000/svg" width="14" height="15">
-           <path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/>
+<main class="product-page">
+  <section id="gallery" class="gallery">
+    <div id="modal" role="dialog" aria-modal="true" aria-label="Product image gallery">
+      <button id="close-gallery" class="gallery__modal--close">
+        <svg class="orange-x"  xmlns="http://www.w3.org/2000/svg" width="14" height="15">
+          <path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/>
+        </svg>
+      </button>
+
+      <div class="gallery__card">
+        <button class="gallery__prev" id="previous" aria-label="previous image">
+          <svg class="orange" xmlns="http://www.w3.org/2000/svg" width="13" height="18">
+            <path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/>
+        </button>
+
+        <img class="gallery__main-image" id="main-image" src="images/image-product-1.jpg" alt="a pear sneakers" >
+          
+        <button class="gallery__next" id="next" aria-label="next image">
+          <svg class="orange" xmlns="http://www.w3.org/2000/svg" width="13" height="18">
+            <path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/>
           </svg>
         </button>
-        <div class="card">
-          <button class="img-btn img-btn--right" id="preview" aria-label="preview image">
-            <svg class="orange" xmlns="http://www.w3.org/2000/svg" width="13" height="18">
-              <path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/>
-          </button>
-
-          <img src="images/image-product-1.jpg" alt="a pear sneakers" id="main-image">
-          
-          <button class="img-btn img-btn--left" id="next" aria-label="next image">
-            <svg class="orange" xmlns="http://www.w3.org/2000/svg" width="13" height="18">
-              <path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/>
-            </svg>
-          </button>
-        </div>
+      </div>
       
-      <div class="thumbnails">
-        <img src="images/image-product-1.jpg" alt="sneakers front" class="thumb">
-        <img src="images/image-product-2.jpg" alt="sneakers front" class="thumb">
-        <img src="images/image-product-3.jpg" alt="sneakers side" class="thumb">
-        <img src="images/image-product-4.jpg" alt="sneakers side" class="thumb">
+      <div class="gallery__thumbnails">
+        <img src="images/image-product-1.jpg" alt="sneakers front" class="gallery__thumb" role="button" tabindex="0" aria-label="View image 1">
+        <img src="images/image-product-2.jpg" alt="sneakers front" class="gallery__thumb" role="button" tabindex="0" aria-label="View image 2">
+        <img src="images/image-product-3.jpg" alt="sneakers side" class="gallery__thumb" role="button" tabindex="0" aria-label="View image 3">
+        <img src="images/image-product-4.jpg" alt="sneakers side" class="gallery__thumb" role="button" tabindex="0" aria-label="View image 4">
       </div>
       </div>
     </section>
-  </div>
+  
   
 
-  <section class="content">
-    <p class="name">Sneaker Company</p>
-    <h1 id="name" class="bold">Fall Limited Edition Sneakers</h1>
+  <section class="product">
+    <p class="product__brand">Sneaker Company</p>
+    <h1 id="name" class="product__title">Fall Limited Edition Sneakers</h1>
     <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
   durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
-    <div class="flex-row price">
-      <p  class="bold"><span id="price">$125.00</span> <span class="bg-text">50%</span></p>
-      <p class="cut-text">$250.00</p>
+    <div class="product__pricing">
+      <p  class="product__price-current">
+        <span id="price">$125.00</span> 
+        <span class="product__discount">50%</span></p>
+      <p class="product__price-original">$250.00</p>
     </div>
     
-    <div class="buttons-flex">
-      <div class="flex-row bg-light">
+    <div class="product__actions">
+      <div class="quantity__selector">
         <button id="minus" aria-label="decrease quantity">
           <svg class="pale-orange" width="12" height="4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
             <path d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z" id="a"/>
@@ -117,11 +123,13 @@
   </section>
 
   <section class="cart-box" id="cart-box">
-    <h2 class="nav bold">Cart</h2>
+    <h2 class="cart-box__title">Cart</h2>
     <div class="">
       
-      <ul id="cart-items">Your cart is empty</ul>
-      <button type="button" class="button" id="checkout" aria-label="proceed to checkout">Checkout</button>
+      <ul id="cart-items" class="cart-box__items">
+        <p>Your cart is empty</p>
+      </ul>
+      <button type="button" class="button button--checkout" id="checkout" aria-label="proceed to checkout">Checkout</button>
     </div>
   </section>
 </main>
