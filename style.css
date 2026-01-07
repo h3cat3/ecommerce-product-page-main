@@ -10,10 +10,15 @@
     --Black-transparent: hsla(0, 0%, 0%, 0.75);
 
 }
+@font-face {
+    font-family: "Kumbh Sans";
+    src: url(font/KumbhSans-VariableFont_YOPQ\,wght.ttf);
+}
 
 body{
     height: 100vh;
     color: var(--Dark-grayish-blue);
+    font-family: "Kumbh Sans", sans-serif;
     
 }
 
